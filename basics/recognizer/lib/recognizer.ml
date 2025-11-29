@@ -1,6 +1,13 @@
-let lang1 _ = failwith ""
+let lang1 l = List.fold_left(fun acc x -> if (x = "0" || x = "1") then acc && true else acc && false) true l
 
-let lang2 _ = failwith ""
+let rec lang2 l = 
+  match l with
+  |[] -> true
+  | "0" :: "1" :: t -> lang2 ("1"::t)
+  | "1" :: "0" :: _ -> false
+  | "1" :: "1" :: t -> lang2 ("1"::t)
+  | ["1"]-> true
+  | _ -> false
 
 let lang3 _ = failwith ""
 

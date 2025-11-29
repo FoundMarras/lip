@@ -58,11 +58,10 @@ let win l =
   else X 
 
 (* val string_of_winner : token -> string *)
-let rec string_of_winner w = 
+let string_of_winner w = 
   match w with 
-  |[] -> ""
-  | A :: t -> "A" ^ string_of_winner t
-  | X :: t -> "=" ^ string_of_winner t
-  | B :: t -> "B" ^ string_of_winner t
+  | A -> "A" 
+  | X -> "=" 
+  | B -> "B"
 
 
